@@ -99,6 +99,14 @@ function Kit2() {
     // start source 2
     loop2.start();
   };
+
+  const stop = async () => {
+    // start source 2
+    loop1.stop();
+    // start source 2
+    loop2.stop();
+    load();
+  };
   const openGainForSource = () => {
     // manipulate gain (the middle node)
     if (gain1.gain.value === 0) {
@@ -110,6 +118,7 @@ function Kit2() {
   return (
     <div className="App">
       <button onClick={setContext}>Set Audio Context</button>
+      <button onClick={stop}>stop</button>
       <button onClick={load}>load</button>
       <button onClick={play}>play</button>
       <button onClick={openGainForSource}>Open Gain For Source</button>
